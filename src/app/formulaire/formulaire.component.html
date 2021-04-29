@@ -1,7 +1,8 @@
 
 <div class="container">
     <form name="myForm" [formGroup]="myForm" (ngSubmit)="myForm.valid && onSubmit()">
-        <div class="form-group">
+        <h1>Subscribe Form</h1>
+        <div class="form-group" id="dispo">
             <label><strong>Nom</strong></label>
             <input type="text" class="form-control" placeholder="Nom" formControlName="Nom" 
             [ngClass]="{'is-invalid': myForm.get('Nom')?.touched && myForm.get('Nom')?.invalid}" />
@@ -10,7 +11,7 @@
                 
             </div>
         </div><br>
-        <div class="form-group">
+        <div class="form-group" id="dispo">
             <label><strong>Prénom</strong></label>
             <input type="text" class="form-control" placeholder="Prénom" formControlName="Prenom"
             [ngClass]="{'is-invalid': myForm.get('Prenom')?.touched && myForm.get('Prenom')?.invalid}" />
@@ -18,7 +19,7 @@
                 <div *ngIf="myForm.get('Prenom')?.errors?.required" >Le prénom est obligatoire</div>
             </div>
         </div><br>
-        <div class="form-group">
+        <div class="form-group" id="dispo">
             <label><strong>Courriel</strong></label>
             <input type="email" class="form-control" placeholder="email" formControlName="Courriel"
             [ngClass]="{'is-invalid': myForm.get('Courriel')?.touched && myForm.get('Courriel')?.invalid}" />
@@ -27,7 +28,7 @@
                 <div *ngIf="myForm.get('Courriel')?.errors?.email" >Courriel non valide</div>
             </div>
         </div><br>
-        <div class="form-group">
+        <div class="form-group" id="dispo">
             <label><strong>Age</strong></label>
             <input type="number" class="form-control" placeholder="Votre age" formControlName="Age"
             [ngClass]="{'is-invalid': myForm.get('Age')?.touched && myForm.get('Age')?.invalid}" />
@@ -35,8 +36,8 @@
                 <div *ngIf="myForm.get('Age')?.errors?.required" >Veuillez entrer votre age</div>
             </div>
         </div>
-        <div><br>
-            <button>
+        <div id="dispo"><br>
+            <button class="btn">
                 Valider
             </button>
         </div>
