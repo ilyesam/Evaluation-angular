@@ -1,0 +1,55 @@
+
+<div class="container">
+    <form name="myForm" [formGroup]="myForm" (ngSubmit)="myForm.valid && onSubmit()">
+        <div class="form-group">
+            <label><strong>Nom</strong></label>
+            <input type="text" class="form-control" placeholder="Nom" formControlName="Nom" 
+            [ngClass]="{'is-invalid': myForm.get('Nom')?.touched && myForm.get('Nom')?.invalid}" />
+            <div class="invalid-feedback">
+                <div *ngIf="myForm.get('Nom')?.errors?.required" >Le nom est obligatoire</div>
+                
+            </div>
+        </div><br>
+        <div class="form-group">
+            <label><strong>Prénom</strong></label>
+            <input type="text" class="form-control" placeholder="Prénom" formControlName="Prenom"
+            [ngClass]="{'is-invalid': myForm.get('Prenom')?.touched && myForm.get('Prenom')?.invalid}" />
+            <div class="invalid-feedback">
+                <div *ngIf="myForm.get('Prenom')?.errors?.required" >Le prénom est obligatoire</div>
+            </div>
+        </div><br>
+        <div class="form-group">
+            <label><strong>Courriel</strong></label>
+            <input type="email" class="form-control" placeholder="email" formControlName="Courriel"
+            [ngClass]="{'is-invalid': myForm.get('Courriel')?.touched && myForm.get('Courriel')?.invalid}" />
+            <div class="invalid-feedback">
+                <div *ngIf="myForm.get('Courriel')?.errors?.required" >Courriel obligatoire</div>
+                <div *ngIf="myForm.get('Courriel')?.errors?.email" >Courriel non valide</div>
+            </div>
+        </div><br>
+        <div class="form-group">
+            <label><strong>Age</strong></label>
+            <input type="number" class="form-control" placeholder="Votre age" formControlName="Age"
+            [ngClass]="{'is-invalid': myForm.get('Age')?.touched && myForm.get('Age')?.invalid}" />
+            <div class="invalid-feedback">
+                <div *ngIf="myForm.get('Age')?.errors?.required" >Veuillez entrer votre age</div>
+            </div>
+        </div>
+        <div><br>
+            <button>
+                Valider
+            </button>
+        </div>
+    </form>
+</div>
+<hr>
+<p>Nom : {{nom?.value}}</p>
+<p>Prénom : {{prenom?.value}} </p>
+<p>Courriel : {{courriel?.value}}</p>
+<p>Age : {{age?.value}}</p>
+
+
+<!--<p>Nom : {{nom?.value}}</p>
+<p>Prénom : {{myForm.controls.Prenom.value}} </p>
+<p>Courriel : {{myForm.controls.Courriel.value}}</p>
+<p>Age : {{myForm.controls.Age.value}}</p> -->
